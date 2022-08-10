@@ -10,7 +10,7 @@
     <div class="container">
        <h1>This is a heading</h1>
 
-       <div class="content">
+       <div id="content">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
             Unde, sit officia! Doloribus est, cupiditate impedit ipsam quas ullam,
              quo error libero omnis maxime inventore harum voluptatibus
@@ -19,7 +19,7 @@
     </div>
 
 <script>
-    //write your js here
+    //write your in-browser js here
     console.log('Hello World');
     //dynamic typing:  no need to mention datatypes
     var a = 6;
@@ -48,6 +48,28 @@
     console.log("The value of ++num1 is " + (++ num1)); // now value will be 4 as last value was 3, if you will comment upper line then value will be 3
     console.log("The value of num1 -- is " + (num1 --));  
     console.log("The value of -- num1 is " + (-- num1));
+
+
+
+    // Strings in JavaScript
+    var string = "Ridsa";
+    var spec = 'coder';
+    var name = ' I am "Ridsa"'; // you can use either single or double quotes for string
+    console.log(name);
+    console.log(string + name); // string concatenation
+    // Template Literal
+    var temp = `${string} is a "nice" girl and she is a ${spec}.`;
+    console.log(temp);
+    // length of string
+    var len = name.length;
+    console.log(`Length of name is ${len}`);
+    // Escape sequences
+    console.log("Ridsa\nShabbir\tand\\");
+    // string constructor
+    var x = new String("this");
+    console.log(x);
+    // dynamically insert html through javascript
+    document.getElementById('content').innerHTML = '<h3>this is an h3 heading </h3>';
 </script>
 
 </body>
