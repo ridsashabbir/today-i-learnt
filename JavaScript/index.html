@@ -18,6 +18,10 @@
        </div>
     </div>
 
+    <!-- Javascript is often used to manipulate DOM and add new functionality to the webpage.
+     If <script> tag is not added at end of the <body> tag, DOM may not be ready by that time,
+     thus preventing javascript to work on it, leading to unknown behaviors. -->
+
 <script>
     //write your in-browser js here
     console.log('Hello World');
@@ -70,6 +74,46 @@
     console.log(x);
     // dynamically insert html through javascript
     document.getElementById('content').innerHTML = '<h3>this is an h3 heading </h3>';
+
+
+    // String Functions in JavaScript
+    var str = "This is a String";
+    var position = str.indexOf("is"); // it will give you the first occurence of substring
+    console.log(position);
+    position = str.lastIndexOf("is"); // it will give you the last occurence of substring
+    console.log(position);
+    // substring from a string
+    var substr1 =  str.slice(1,7); 
+    console.log(substr1);
+    // slice can take -ve values but substring will only take +ve values
+    substr1 = str.substring(1,7);
+    console.log(substr1);
+    // it will exracts characters by the given length in paranthesis
+    substr1 = str.substr(1,3);
+    console.log(substr1);
+    // replace a substring
+    var replaced = str.replace('String' , 'Ridsa');
+    console.log(str);
+    console.log(replaced);
+    // to uppercase
+    console.log(str.toUpperCase());
+    // to lowercase
+    console.log(str.toLowerCase());
+    // conactenation
+    var newStr = str.concat(" New String"); // '+' operator is also used for concatenation
+    console.log(newStr);
+    // remove white spaces from start and end
+    var strWithSpaces = "      this contains              WhiteSpaces       ";
+    console.log(strWithSpaces);
+    console.log(strWithSpaces.trim());
+    // extract character from string
+    var char2 = str.charAt(2);
+    console.log(char2);
+    console.log(str[2]); //it will do the same
+    // extract character code for specific character
+    var char2 = str.charCodeAt(2);
+    console.log(char2);
+
 </script>
 
 </body>
