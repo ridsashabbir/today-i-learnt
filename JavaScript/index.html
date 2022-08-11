@@ -114,6 +114,29 @@
     var char2 = str.charCodeAt(2);
     console.log(char2);
 
+
+
+    // scope of variable - a good practice is to use let instead of var
+    var string1 = "This is a string";
+    var string1 = "This is second string";  // you can declare variables (string1) multiple times
+    console.log(string1);   // it will print latest one as, var - global
+    // scope of let 
+    let z = "a1";
+    z = "a2";
+    console.log(z);  // it will print the latest assigned value
+    // let z = "a1"; // it won't allow to declare same variable two times
+    {
+        // this block can be a function, if-else etc.
+        let z = "a3";
+        console.log(z); // scope of let will remain within the block
+    }
+    console.log(z);  // it will print the latest assigned value outside the block
+    // scope of const
+    // const a = "This cannot be changed"; // this will throw error as a is already declared
+    const f = "This cannot be changed";
+   // f = "I want to change this. This cannot be changed"; // this will throw error as const cannot be changed
+    console.log(f);
+
 </script>
 
 </body>
