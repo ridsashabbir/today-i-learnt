@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Events</title>
+</head>
+<style>
+    #btn{
+        background-color: rebeccapurple;
+        color: white;
+        padding: 12px 16px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+<body>
+    
+     <!-- events in javascript
+       ** Browser Events:
+     click
+     context menu
+     mouseover / mouseout
+     mousedown / mouseup
+     mousemove
+     submit
+     focus
+     DOMcontentLoaded
+     transitionend -->
+
+
+     <div class="container">
+        <h3>This is a heading</h3>
+        <p id = "para">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Voluptas, voluptatem minus distinctio tenetur ea excepturi non ut 
+            laudantium magni voluptates totam quibusdam. Architecto commodi optio
+             recusandae a possimus, dolorum quibusdam?
+        </p>
+     </div>
+     <button id="btn" onclick="toggleHide()">Show / Hide</button>
+
+     <script>
+
+         let para = document.getElementById('para');
+         para.addEventListener('mouseover' , function run(){
+            console.log('mouse inside');
+         });
+
+
+         para.addEventListener('mouseout' , function run(){
+            console.log('mouse now went outside');
+         });
+
+        function toggleHide(){
+            let btn = document.getElementById('btn');
+            let para = document.getElementById('para');
+            if(para.style.display != 'none'){
+                para.style.display = 'none';  // it will hide the paragraph
+            }
+            else{
+                para.style.display = 'block';  // it will show the paragraph
+            }
+        }
+     </script>
+</body>
+</html>
