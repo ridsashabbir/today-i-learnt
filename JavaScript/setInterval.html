@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clearTimeout and setTimeOut</title>
+</head>
+<body>
+    <div class="container">
+        Current Time is <span id="time"></span>
+    </div>
+
+    <script>
+        
+        // setTimeout - allows us to run the function once after the interval of time
+        // clearTimeout - allows us to run the function repeatedly after the interval of time
+
+        function greet(){
+            console.log("Hello, Good Morning! ");
+        }
+        // greet();
+        // setTimeout(greet(), 7000); // it will wrong as you should not give paranthesis with greet so it won't wait for a single second
+        setTimeout(greet, 7000); // it will print Hello World after 7 seconds
+
+        function greet(name){
+            console.log("Hello, Good Morning! " + name);
+        }
+        // greet();
+        setTimeout(greet, 7000, "Ridsa"); // you can pass an argument here
+
+        function greet(name, byeText){
+            console.log("Hello, Good Morning! " + name + " " + byeText);
+        }
+        // greet();
+        setTimeout(greet, 7000, "Ridsa", "GoodBye"); // you can pass Multiple arguments too
+
+        // function greet(){
+        //     console.log("Hello, Good Morning! ");
+        // }
+        // timeOutId = setTimeout(greet, 7000); 
+        // console.log(timeOutId); // this will generate a unique id that you can pass to clearTimeout
+        // clearTimeout(timeOutId); // now it won't print anything as it's cleared
+
+        // setInterval(greet, 1000, "Ridsa", "Byee!");  // it will keep on executing it after a second repeatedly 
+        IntervalId = setInterval(greet, 1000, "Ridsa", "Byee!");
+        clearInterval(IntervalId); // now it won't run even for a single time as we have cleared it
+
+        // let's just show the current time on our website
+        function displayTime(){
+            time = new Date();
+            console.log(time);
+            document.getElementById('time').innerHTML = time;
+        }
+        setInterval(displayTime, 1000); // it will show changed time after each second
+    </script>
+</body>
+</html>
