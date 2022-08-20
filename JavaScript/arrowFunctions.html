@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Functions</title>
+</head>
+<body>
+    <div class="container">
+        This is a container.
+    </div>
+    <script>
+        
+        //Arrow Function
+        let greet = () =>{
+            console.log("Hello World");
+        }
+        greet();
+
+        // let's make it more simple
+        let greet1 = () => ("This is another method");
+        console.log(greet1());
+
+
+        setTimeout(() => {
+            console.log("We are inside setTimeout!");
+        }, 5000);
+
+        // let's try it with sum function
+        let sum = (a,b) =>{
+            let c = a+b;
+            console.log(c);
+        }
+        sum(10, 3);
+
+       // let's make it more simple
+        let half = a => a/2;
+        console.log(half(8));
+
+
+        // let's make an object and run arroe function inside forEach loop
+        let obj1 = {
+            names: ['Ridsa', 'Aliza', 'Meerab', 'Amina'],
+            speak(){
+                this.names.forEach((student) => {
+                    console.log("Hello, " + student);
+                });
+            }
+        }
+        obj1.speak();
+
+        // obj2 will give you undefined for greeting as normal 'function s(student' is used
+        // so it will find it's this inside the speak function which will not be availble as greeting is 
+        // outside the function.
+        // this is the issue of lexical binding 'this'
+
+        
+        let obj2 = {
+            greeting: "Good Morning, ",
+            names: ['Ridsa', 'Aliza', 'Meerab', 'Amina'],
+            speak(){
+                this.names.forEach(function s(student){
+                    console.log(this.greeting + "Hello, " + student);
+                });
+            }
+        }
+        obj2.speak();
+
+        // arrow function solves the issue of lexical binding “this”
+        // let's solve this problem using arrow function, it will run !
+        // as arrow function won't bound for this, ou can use any element outside the function
+        // but within the object. so greeting is inside the object so 'this.greeting' will run as
+        // it is the parent's 'this'
+
+        let obj3 = {
+            greeting: "Good Morning, ",
+            names: ['Ridsa', 'Aliza', 'Meerab', 'Amina'],
+            speak(){
+                this.names.forEach((student) => {
+                    console.log(this.greeting + "Hello, " + student);
+                });
+            }
+        }
+        obj3.speak();
+
+    </script>
+</body>
+</html>
