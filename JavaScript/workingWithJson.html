@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working With json</title>
+</head>
+<body>
+    <div class="container">
+        This is a container
+    </div>
+    <script>
+
+        // let's create an object
+        let jsonObj = {
+            fname: "Ridsa",
+            lname: "Shabbir",
+            food: "Pizza",
+        }
+        console.log(jsonObj);
+
+        // convert this object in string
+        let myJsonStr = JSON.stringify(jsonObj);
+        console.log(myJsonStr);
+
+        // let's apply some string functions on it
+        myJsonStr = myJsonStr.replace('Pizza', 'Burger');
+        console.log(myJsonStr);
+
+        // now convert this string again into object - string must be a valid json
+        newJsonObj = JSON.parse(myJsonStr);
+        console.log(newJsonObj);
+    </script>
+</body>
+</html>
