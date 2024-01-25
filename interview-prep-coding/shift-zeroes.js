@@ -1,3 +1,4 @@
+// remove a zero from the array and then append it at the end of array
 const shiftZeroes = (arr) => {
   for (let i = arr.length - 1; i >= 0; i--) {
     if (arr[i] === 0) {
