@@ -17,3 +17,8 @@ function myfuntion2(item, index, arr) {
 function myfuntion3(index, arr) {
   console.log(arr[index]);
 }
+
+// Regular functions, on the other hand, strictly follow the parameters
+// defined in their function signature. If you call them with fewer
+// arguments than expected, the additional parameters will be undefined.
+// This is why myfunction1 works differently from the arrow function.
