@@ -1,6 +1,13 @@
 // forEach method calls a function for each element in array
 
 const numbers = [2, 4, 6, 8];
+// call it as a arrow function
+
+let sum = 0;
+numbers.forEach((item, index, arr) => {
+  sum += item;
+});
+console.log("Sum of elements of array is: ", sum);
 
 // call forEach method for three functions separately
 numbers.forEach(myfuntion1);
@@ -21,3 +28,6 @@ function myfuntion2(item, index, arr) {
 function myfuntion3(index, arr) {
   console.log(arr[index]);
 }
+
+// Arrow functions don't have their own arguments object like regular functions. They lexically capture the arguments of their containing scope. So, even if you don't use all the parameters provided in the arrow function, they are still defined and accessible within the function body.
+// Regular functions, on the other hand, strictly follow the parameters defined in their function signature. If you call them with fewer arguments than expected, the additional parameters will be undefined. This is why myfunction1 works differently from the arrow function.
